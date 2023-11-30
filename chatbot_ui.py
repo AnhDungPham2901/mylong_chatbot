@@ -1,5 +1,8 @@
 import socket
+import random
+import time
 import streamlit as st
+from loguru import logger
 
 def show_page_config_title():
     st.set_page_config(
@@ -13,7 +16,7 @@ def set_up_session_state():
         st.session_state.messages = []
 
 def get_response_from_socket_server(data:str):
-    HOST, PORT = "34.238.41.30", 9999
+    HOST, PORT = "44.210.128.74", 9999
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as sock:
         # Connect to server and send data
         sock.connect((HOST, PORT))
