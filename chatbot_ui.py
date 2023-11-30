@@ -10,11 +10,7 @@ def show_page_config_title():
 
 def set_up_session_state():
     if 'messages' not in st.session_state:
-        default_first_message = '''
-        Welcome to Host Healthcare! I am your assistant and I will help 
-        you apply for jobs within a minute. Please tell me your medical specialty and where you'd like to travel.
-        '''
-        st.session_state.messages = [{"role": "assistant", "content": default_first_message}]
+        st.session_state.messages = []
 
 def get_response_from_socket_server(data:str):
     HOST, PORT = "44.210.128.74", 9999
